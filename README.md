@@ -52,6 +52,20 @@ HgRgTVSdX.exe is connecting to port 9999 on the .200 address.
 Additionally, I ran the getsids plugin in Volatility and grepped for the universal System SID of S-1-5-18 to further investigate
 
 ![Screenshot (550)](https://github.com/user-attachments/assets/3774cb9b-645d-41dd-bd0f-61e2ce8a5252)
+--------------------------------------------------------------------------------------------------------------------
+
+
+## **Indicators of Compromise (IoCs) for This Attack:**
+
+I would consider the following as key IoCs for this attack:
+
+- The presence of **cmd.exe** running with System privileges.
+- Unknown or rogue processes establishing connections to other devices.
+- The existence of processes such as **ghost.exe**, **mXvtj.exe**, **HgRgTVSdX.exe**, and **tior.exe**.
+
+## **IoCs to Monitor on the Rest of the Network:**
+
+On the rest of the network, I would look for any traffic directed toward the known malicious IP addresses: **192.168.248.200** and **192.168.248.217**. Additionally, monitoring for unusual outbound connections or any anomalous traffic patterns could help identify further compromise.
 
 
 
