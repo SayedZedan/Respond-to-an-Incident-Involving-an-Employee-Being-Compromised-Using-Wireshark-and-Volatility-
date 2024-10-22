@@ -28,5 +28,31 @@ To further validate my findings, I filtered the traffic for both **192.168.248.1
 ![Screenshot (547)](https://github.com/user-attachments/assets/10b7cff3-7e5b-49df-89c6-b0c5bef3bc53)
 --------------------------------------------------------------------------------------------------------
 
+I found several malicious processes running on the suspected compromised device, including ghost.exe, eDqYEC.exe, HgRgTVSdX.exe, mXvtj.exe, and tior.exe (a known Metasploit privilege escalation process).
+
+I identified these processes by examining the active processes on the device and using tools like Task Manager and Process Explorer. To further confirm their malicious nature, I extracted these files and submitted them to virustotal.com for analysis, which provided detailed information about their threat
+
+I observed that ghost.exe, mXvtj.exe, and HgRgTVSdX.exe have active connections. I discovered this by using the netscan plugin in Volatility and grepping for each rogue process.
+
+See below for details:
+
+![Screenshot (549)](https://github.com/user-attachments/assets/58b5e629-6f50-47a6-a8c9-e29d76ae2bce)
+
+I found the following:
+
+ghost.exe is connecting to port 7777 on the .200 address.
+mXvtj.exe is connecting to port 4444 on the .200 address.
+HgRgTVSdX.exe is connecting to port 9999 on the .200 address.
+
+
+---------------------------------------------------------------------------------------------------
+
+ I believe there is a reason to suspect that the attacker had system-level privileges at some point. The presence of tior.exe indicates a privilege escalation attack.
+
+Additionally, I ran the getsids plugin in Volatility and grepped for the universal System SID of S-1-5-18 to further investigate
+
+![Screenshot (550)](https://github.com/user-attachments/assets/3774cb9b-645d-41dd-bd0f-61e2ce8a5252)
+
+
 
 
