@@ -6,10 +6,12 @@ My key actions included:
 
 1. **Vulnerability Assessment:** I evaluated the web applications on the VM for known vulnerabilities.
 2. **Traffic Analysis:** I monitored network traffic to identify suspicious IP addresses.
-3. **Impact Evaluation:** I assessed the potential risks to the customer's infrastructure.
+3.  **Impact Evaluation:** I assessed the potential risks to the customer's infrastructure
+
+   
    ----------------------------------------------------------------------------------------------------
    
-   ## 1. **Identifying the IP Address of the Malicious Website:**
+   ##  **Identifying the IP Address of the Malicious Website:**
 
 In my analysis, I considered the IP address of the virtual machine hosting the malicious website to be **192.168.248.217**. Given the client's hints that the victim was “practicing” with a local VM, I assumed the victim was using an internal IP address to maintain isolation. 
 
@@ -20,7 +22,7 @@ I quickly observed connections to **192.168.248.2** and **192.168.248.217**. It 
 
 _________________________________________________________________________________________________________________________________________
 
-## 2. **Identifying the Attackers' IP Address:**
+##  **Identifying the Attackers' IP Address:**
 
 I deduced that the eventual attacker's IP address is **192.168.248.200**. This conclusion stemmed from observing that immediately after connecting to what appeared to be the practice web server, there was a direct connection to port **8080** on **192.168.248.200**. This was quickly followed by another connection to port **4444** on the same IP address.
 
